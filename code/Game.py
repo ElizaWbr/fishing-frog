@@ -11,6 +11,7 @@ class Game:
         pygame.init()
         self.window = pygame.display.set_mode(size=(WIN_WIDTH, WIN_HEIGHT))
         pygame.mixer_music.load('./asset/AutumnForest.mp3')
+        pygame.mixer_music.set_volume(0.2)
         pygame.mixer_music.play(-1)
 
     def run(self):
