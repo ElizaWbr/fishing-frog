@@ -6,9 +6,7 @@ from pygame import Surface, Rect
 from pygame.font import Font
 
 from code.Const import C_WHITE, C_DARK_BLUE, FISHING_TIMEOUT_START, FISHES, WIN_WIDTH
-
-from code.Menu import Menu
-
+from code.Fished import Fished
 
 def random_fishing_timeout():
     return random.choice(FISHING_TIMEOUT_START)
@@ -22,9 +20,6 @@ class Level:
         self.surf = pygame.image.load('./asset/GameBg.jpg').convert_alpha()
         self.rect = self.surf.get_rect(left=0, top=0)
     def run(self):
-        pygame.mixer_music.load(f'./asset/AutumnForest.mp3')
-        pygame.mixer_music.set_volume(0.3)
-        pygame.mixer_music.play(-1)
         self.window.blit(source=self.surf, dest=self.rect)
 
         fishing_start_timeout = random_fishing_timeout()
@@ -67,14 +62,16 @@ class Level:
                             fish_surf = pygame.image.load('./asset/fishes/' + fish + '.png').convert_alpha()
                             fish_rect = fish_surf.get_rect(center=((WIN_WIDTH / 2), 400))
 
+                            fished = Fished(self.window)
+                            fished.save(fish)
+
                             self.window.blit(source=fish_surf, dest=fish_rect)
 
                             allow_fishing = 0
                             fishing_end_timeout = 120
                             fishing_start_timeout = 10000
                     if event.key == pygame.K_BACKSPACE:
-                        menu = Menu(self.window)
-                        menu.run()
+                        return
 
             if 0 <= fishing_start_timeout < 10000:
                 self.window.blit(source=self.surf, dest=self.rect)

@@ -12,8 +12,7 @@ class Menu:
 
     def run(self):
         menu_option = 0
-        pygame.mixer_music.load('./asset/AutumnForest.mp3')
-        pygame.mixer_music.play(-1)
+
         while True:
             # DRAW IMAGES
             self.window.blit(source=self.surf, dest=self.rect)

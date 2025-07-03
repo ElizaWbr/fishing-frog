@@ -12,6 +12,7 @@ C_DARK_BLUE = (25, 11, 90)
 
 # M
 MENU_OPTION = ("START GAME",
+               "FISHES",
                "EXIT")
 
 FISHING_TIMEOUT_START = (
