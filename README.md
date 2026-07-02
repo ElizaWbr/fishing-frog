@@ -1,6 +1,6 @@
 # Fishing Frog
 
-Projeto criado para diciplina de python durante a faculdade de Engenharia de Software na Uninter.
+Projeto criado para diciplina de Python durante a faculdade de Engenharia de Software na Uninter.
 
 ## Gameplay
 É só esperar o tempo passar enquanto escuta uma musiquinha relaxante, quando o momento chegar você poderá pescar um peixinho e exibir na sua lista de peixinhos pescados :3
